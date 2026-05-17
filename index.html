@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نموذج العمل التجاري</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+:root {
+  --bg-main: #ffffff;
+  --bg-secondary: #f5f7fa;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --border-primary: #2c3e50;
+  --border-secondary: #95a5a6;
+  --border-tertiary: #d0d7de;
+  --color-background-info: #E6F1FB;
+  --color-text-info: #0C447C;
+  --color-border-info: #378ADD;
+  --color-background-success: #E1F5EE;
+  --color-text-success: #085041;
+  --color-background-warning: #FAEEDA;
+  --color-text-warning: #633806;
+  --color-background-danger: #FCEBEB;
+  --color-text-danger: #A32D2D;
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f5f7fa;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #666666;
+  --color-border-secondary: #95a5a6;
+  --color-border-tertiary: #d0d7de;
+  --border-radius-md: 6px;
+  --border-radius-lg: 8px;
+}
+
+body.dark-mode {
+  --bg-main: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-card: #242424;
+  --text-primary: #e8e8e8;
+  --text-secondary: #a8a8a8;
+  --border-primary: #4a5568;
+  --border-secondary: #4a5568;
+  --border-tertiary: #3a3a3a;
+  --color-background-info: #1e3a5f;
+  --color-text-info: #7db3f5;
+  --color-border-info: #4a90e2;
+  --color-background-success: #1a4d3c;
+  --color-text-success: #5fd4a0;
+  --color-background-warning: #5a4520;
+  --color-text-warning: #f5c26b;
+  --color-background-danger: #4d1f1f;
+  --color-text-danger: #f09595;
+  --color-background-primary: #242424;
+  --color-background-secondary: #2d2d2d;
+  --color-text-primary: #e8e8e8;
+  --color-text-secondary: #a8a8a8;
+  --color-border-secondary: #4a5568;
+  --color-border-tertiary: #3a3a3a;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg-main);transition:background-color 0.3s ease,color 0.3s ease}
+.bm{direction:rtl;padding:1rem 0}
+
+.dark-mode-toggle{
+  position:fixed;top:20px;left:20px;
+  background:var(--bg-card);border:2px solid var(--border-secondary);
+  border-radius:50%;width:50px;height:50px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:24px;transition:all 0.3s ease;
+  z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,0.15);
+}
+.dark-mode-toggle:hover{transform:scale(1.1);box-shadow:0 4px 12px rgba(0,0,0,0.25)}
+
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:1.5rem}
+.tab-btn{padding:7px 12px;font-size:12px;border:2px solid var(--border-secondary);border-radius:var(--border-radius-md);background:transparent;color:var(--text-secondary);cursor:pointer;display:flex;align-items:center;gap:5px;transition:all 0.3s ease}
+.tab-btn:hover{border-color:var(--border-primary);transform:translateY(-2px)}
+.tab-btn.active{background:var(--color-background-info);color:var(--color-text-info);border-color:var(--color-border-info);border-width:2px}
+.tab-content{display:none}
+.tab-content.active{display:block}
+
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:1.2rem}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:1.2rem}
+
+.card{background:var(--bg-card);border:2px solid var(--border-tertiary);border-radius:var(--border-radius-lg);padding:.9rem 1.1rem;transition:all 0.3s ease}
+.card:hover{border-color:var(--border-secondary);box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+
+.ct{font-size:12px;color:var(--text-secondary);margin-bottom:5px;display:flex;align-items:center;gap:5px}
+.cb{font-size:13px;color:var(--text-primary);line-height:1.7}
+.cb ul{padding-right:14px}
+.cb li{margin-bottom:2px}
+.cn{font-size:22px;font-weight:500;color:var(--text-primary)}
+.cu{font-size:11px;color:var(--text-secondary);margin-top:2px}
+
+.bdg{display:inline-block;font-size:11px;padding:2px 8px;border-radius:var(--border-radius-md)}
+.bi{background:var(--color-background-info);color:var(--color-text-info)}
+.bs{background:var(--color-background-success);color:var(--color-text-success)}
+.bw{background:var(--color-background-warning);color:var(--color-text-warning)}
+
+.hci{border-right:4px solid #378ADD}
+.hcs{border-right:4px solid #639922}
+.hcw{border-right:4px solid #BA7517}
+.hcd{border-right:4px solid #E24B4A}
+
+.tbl{width:100%;border-collapse:collapse;font-size:12px}
+.tbl th{text-align:right;font-weight:500;font-size:11px;color:var(--text-secondary);padding:7px 8px;border-bottom:2px solid var(--border-tertiary)}
+.tbl td{padding:8px;border-bottom:1px solid var(--border-tertiary);color:var(--text-primary);font-size:12px}
+.tbl tr:last-child td{border-bottom:none}
+.tr-total td{font-weight:500;background:var(--bg-secondary)}
+
+.sec-title{font-size:17px;font-weight:500;color:var(--text-primary);margin-bottom:.4rem}
+.sec-sub{font-size:13px;color:var(--text-secondary);margin-bottom:1.2rem}
+.mcard{background:var(--bg-secondary);padding:.9rem;border-radius:var(--border-radius-md);text-align:center;border:1px solid var(--border-tertiary)}
+
+.gap-item{display:flex;align-items:flex-start;gap:10px;padding:8px;background:var(--bg-secondary);border-radius:var(--border-radius-md);margin-bottom:6px}
+.gap-num{border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0}
+</style>
+
+<button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="تبديل الوضع الليلي" title="تبديل الوضع الليلي">
+  <span id="dark-mode-icon">🌙</span>
+</button>
+
+<div class="bm" style="max-width:900px;margin:0 auto;padding:1rem">
+
+  <div style="margin-bottom:1.4rem">
+    <p style="font-size:21px;font-weight:500;color:var(--color-text-primary)">نموذج العمل التجاري</p>
+    <p style="font-size:13px;color:var(--color-text-secondary);margin-top:3px">شركة تقنية وميديا متكاملة — المملكة العربية السعودية</p>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab('bmc',this)"><i class="ti ti-layout-grid" aria-hidden="true"></i>نموذج العمل</button>
+    <button class="tab-btn" onclick="showTab('market',this)"><i class="ti ti-chart-pie" aria-hidden="true"></i>حجم السوق</button>
+    <button class="tab-btn" onclick="showTab('compete',this)"><i class="ti ti-sword" aria-hidden="true"></i>المنافسون</button>
+    <button class="tab-btn" onclick="showTab('revenue',this)"><i class="ti ti-cash" aria-hidden="true"></i>الإيرادات</button>
+    <button class="tab-btn" onclick="showTab('unit',this)"><i class="ti ti-calculator" aria-hidden="true"></i>اقتصاديات العميل</button>
+    <button class="tab-btn" onclick="showTab('fin',this)"><i class="ti ti-trending-up" aria-hidden="true"></i>التوقعات المالية</button>
+  </div>
+
+  <!-- TAB 1 — نموذج العمل -->
+  <div class="tab-content active" id="tab-bmc">
+    <p class="sec-title">Business Model Canvas</p>
+    <p class="sec-sub">خريطة كاملة توضح كيف تعمل الشركة وتكسب وتنمو</p>
+    <div class="g3">
+      <div class="card hci">
+        <div class="ct"><i class="ti ti-users" aria-hidden="true"></i>شريحة العملاء</div>
+        <div class="cb"><ul>
+          <li>شركات ناشئة لديها فكرة أو تمويل</li>
+          <li>شركات صغيرة ومتوسطة تريد حضوراً رقمياً</li>
+          <li>رجال أعمال يبنون علامة تجارية</li>
+          <li>عملاء يريدون موقع أو تطبيق فقط</li>
+        </ul></div>
+      </div>
+      <div class="card hcs">
+        <div class="ct"><i class="ti ti-heart-handshake" aria-hidden="true"></i>عرض القيمة</div>
+        <div class="cb"><ul>
+          <li>حل متكامل: من الفكرة للتنفيذ تحت سقف واحد</li>
+          <li>إدارة + فريق تقني + فريق ميديا</li>
+          <li>مرونة: خدمة واحدة أو باقة كاملة</li>
+          <li>أوفر من بناء فريق داخلي بنسبة 40-60%</li>
+        </ul></div>
+      </div>
+      <div class="card hcw">
+        <div class="ct"><i class="ti ti-bulb" aria-hidden="true"></i>المشكلة التي نحلها</div>
+        <div class="cb"><ul>
+          <li>صعوبة إيجاد جهة واحدة متكاملة للرقمنة</li>
+          <li>تكلفة بناء فريق تقني داخلي مرتفعة</li>
+          <li>ضياع العميل بين موردين متعددين</li>
+          <li>غياب الاستراتيجية الرقمية المتكاملة</li>
+          <li>تنفيذ تقني بدون فهم بيزنس</li>
+          <li>بطء التحول الرقمي داخل الشركات</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="g3">
+      <div class="card">
+        <div class="ct"><i class="ti ti-rocket" aria-hidden="true"></i>القنوات</div>
+        <div class="cb"><ul>
+          <li>LinkedIn وInstagram للتسويق</li>
+          <li>شبكة علاقات وتوصيات</li>
+          <li>معارض أعمال وفعاليات</li>
+          <li>مبيعات مباشرة (Cold outreach)</li>
+          <li>موقع الشركة + SEO</li>
+        </ul></div>
+      </div>
+      <div class="card">
+        <div class="ct"><i class="ti ti-repeat" aria-hidden="true"></i>علاقة العميل</div>
+        <div class="cb"><ul>
+          <li>مدير حساب مخصص لكل عميل</li>
+          <li>تقارير شهرية لقياس الأداء</li>
+          <li>دعم مستمر بعد التسليم</li>
+          <li>خصومات للعملاء الدائمين</li>
+        </ul></div>
+      </div>
+      <div class="card">
+        <div class="ct"><i class="ti ti-coin" aria-hidden="true"></i>مصادر الإيرادات</div>
+        <div class="cb"><ul>
+          <li>مشاريع بسعر ثابت (ويب/موبايل)</li>
+          <li>اشتراك شهري (باقة ميديا)</li>
+          <li>باقة كاملة شهرية (Full Service)</li>
+          <li>خدمات صيانة ودعم تقني</li>
+          <li>بيع قوالب أو أنظمة جاهزة</li>
+          <li>إدارة وتشغيل الحملات الإعلانية</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="g2">
+      <div class="card">
+        <div class="ct"><i class="ti ti-tools" aria-hidden="true"></i>الموارد الرئيسية</div>
+        <div class="cb"><ul>
+          <li>فريق تطوير (موبايل + ويب)</li>
+          <li>فريق ميديا (تصوير + مونتاج + تصميم)</li>
+          <li>فريق إدارة مشاريع</li>
+          <li>أدوات: Figma، Adobe Suite، GitHub، AWS</li>
+          <li>شبكة علاقات قوية في السوق السعودي</li>
+        </ul></div>
+      </div>
+      <div class="card">
+        <div class="ct"><i class="ti ti-building" aria-hidden="true"></i>الشركاء الرئيسيون</div>
+        <div class="cb"><ul>
+          <li>شركات Cloud (AWS، Google Cloud)</li>
+          <li>استوديوهات تصوير ومعدات</li>
+          <li>مستشارون قانونيون ومحاسبيون</li>
+          <li>وكلاء ومسوقون بعمولة</li>
+          <li>منظمات دعم رواد الأعمال (منشآت)</li>
+        </ul></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="ct" style="font-size:13px;font-weight:500"><i class="ti ti-receipt" aria-hidden="true"></i>هيكل التكاليف</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin-top:8px">
+        <div class="mcard"><div style="font-size:17px;font-weight:500;color:var(--color-text-primary)">45%</div><div style="font-size:11px;color:var(--color-text-secondary)">رواتب الفريق</div></div>
+        <div class="mcard"><div style="font-size:17px;font-weight:500;color:var(--color-text-primary)">15%</div><div style="font-size:11px;color:var(--color-text-secondary)">إيجار ومكتب</div></div>
+        <div class="mcard"><div style="font-size:17px;font-weight:500;color:var(--color-text-primary)">12%</div><div style="font-size:11px;color:var(--color-text-secondary)">تسويق</div></div>
+        <div class="mcard"><div style="font-size:17px;font-weight:500;color:var(--color-text-primary)">8%</div><div style="font-size:11px;color:var(--color-text-secondary)">أدوات وبرمجيات</div></div>
+        <div class="mcard"><div style="font-size:17px;font-weight:500;color:var(--color-text-primary)">20%</div><div style="font-size:11px;color:var(--color-text-secondary)">متنوعة</div></div>
+      </div>
+    </div>
+    <div style="margin-top:1rem;background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:.9rem 1.1rem">
+      <p style="font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:8px"><i class="ti ti-target" aria-hidden="true"></i> مقاييس النجاح</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:6px;font-size:12px;color:var(--color-text-secondary)">
+        <span>• عدد العملاء النشطين ≥ 20 (السنة 2)</span>
+        <span>• معدل الاحتفاظ بالعميل ≥ 80%</span>
+        <span>• هامش الربح الإجمالي ≥ 40%</span>
+        <span>• معدل نمو شهري ≥ 10%</span>
+        <span>• رضا العميل NPS ≥ 70</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2 — حجم السوق (محدّث) -->
+  <div class="tab-content" id="tab-market">
+    <p class="sec-title">حجم السوق — المملكة العربية السعودية</p>
+    <p class="sec-sub">فرصة ضخمة يدفعها رؤية 2030 والذكاء الاصطناعي والتحول الرقمي المتسارع</p>
+
+    <!-- أرقام السوق — محدّثة -->
+    <div class="g3">
+      <div class="card">
+        <div class="ct"><i class="ti ti-device-laptop" aria-hidden="true"></i>سوق تقنية المعلومات والتحول الرقمي</div>
+        <div class="cn">170–225 مليار</div>
+        <div class="cu">ريال سعودي — 2025</div>
+        <div style="margin-top:6px"><span class="bdg bi">نمو 9–12% سنوياً</span></div>
+        <div style="margin-top:7px;font-size:11px;color:var(--text-secondary)">مدفوع برؤية 2030، الذكاء الاصطناعي، الحوسبة السحابية، المدن الذكية</div>
+      </div>
+      <div class="card">
+        <div class="ct"><i class="ti ti-speakerphone" aria-hidden="true"></i>سوق التسويق الرقمي</div>
+        <div class="cn">16–20 مليار</div>
+        <div class="cu">ريال سعودي — 2025</div>
+        <div style="margin-top:6px"><span class="bdg bs">نمو 12–15% سنوياً</span></div>
+        <div style="margin-top:7px;font-size:11px;color:var(--text-secondary)">التجارة الإلكترونية، السوشيال ميديا، Influencer Marketing، منافسة SMEs</div>
+      </div>
+      <div class="card">
+        <div class="ct"><i class="ti ti-building-store" aria-hidden="true"></i>الشركات الصغيرة والمتوسطة</div>
+        <div class="cn">+1.3 مليون</div>
+        <div class="cu">منشأة في السعودية</div>
+        <div style="margin-top:6px"><span class="bdg bw">أغلبهم بدون حل رقمي متكامل</span></div>
+        <div style="margin-top:7px;font-size:11px;color:var(--text-secondary)">مطاعم، عيادات، عقارات، متاجر، شركات ناشئة، خدمات</div>
+      </div>
+    </div>
+
+    <!-- الفجوة السوقية -->
+    <div class="card hcd" style="margin-bottom:1.2rem">
+      <div class="ct" style="font-size:13px;font-weight:500"><i class="ti ti-alert-circle" aria-hidden="true"></i>الفجوة السوقية — لماذا السوق يحتاجنا؟</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:10px">
+        <div>
+          <p style="font-size:11px;font-weight:500;color:var(--text-secondary);margin-bottom:7px">المشكلة الحالية بالسوق</p>
+          <div class="gap-item">
+            <span class="gap-num" style="background:var(--color-background-danger);color:var(--color-text-danger)"><i class="ti ti-x" aria-hidden="true" style="font-size:11px"></i></span>
+            <span style="font-size:12px;color:var(--text-secondary)">الخدمات متفرقة بين موردين متعددين</span>
+          </div>
+          <div class="gap-item">
+            <span class="gap-num" style="background:var(--color-background-danger);color:var(--color-text-danger)"><i class="ti ti-x" aria-hidden="true" style="font-size:11px"></i></span>
+            <span style="font-size:12px;color:var(--text-secondary)">شركات التقنية الكبيرة غالية ولا تهتم بالصغار</span>
+          </div>
+          <div class="gap-item">
+            <span class="gap-num" style="background:var(--color-background-danger);color:var(--color-text-danger)"><i class="ti ti-x" aria-hidden="true" style="font-size:11px"></i></span>
+            <span style="font-size:12px;color:var(--text-secondary)">تأخير في التنفيذ وضعف الدعم بعد التسليم</span>
+          </div>
+          <div class="gap-item">
+            <span class="gap-num" style="background:var(--color-background-danger);color:var(--color-text-danger)"><i class="ti ti-x" aria-hidden="true" style="font-size:11px"></i></span>
+            <span style="font-size:12px;color:var(--text-secondary)">غياب الاستراتيجية الرقمية المتكاملة</span>
+          </div>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:500;color:var(--text-secondary);margin-bottom:7px">الحل الذي نقدمه</p>
+          <div class="gap-item">
+            <span class="gap-num" style="background:var(--color-background-success);color:var(--color-text-success)"><i class="ti ti-check" aria-hidden="true" style="font-size:11px"></i></span>
+            <span style="font-size:12px;color:var(--text-secondary)">تطوير تقني + Branding + Media في مكان واحد</span>
+          </div>
+          <div class="gap-item">
+            <span class="gap-num" style="background:var(--color-background-success);color:var(--color-text-success)"><i class="ti ti-check" aria-hidden="true" style="font-size:11px"></i></span>
+            <span style="font-size:12px;color:var(--text-secondary)">Marketing + AI Solutions متكاملة</span>
+          </div>
+          <div class="gap-item">
+            <span class="gap-num" style="background:var(--color-background-success);color:var(--color-text-success)"><i class="ti ti-check" aria-hidden="true" style="font-size:11px"></i></span>
+            <span style="font-size:12px;color:var(--text-secondary)">نستهدف الشريحة التي تجاهلها الكبار</span>
+          </div>
+          <div class="gap-item">
+            <span class="gap-num" style="background:var(--color-background-success);color:var(--color-text-success)"><i class="ti ti-check" aria-hidden="true" style="font-size:11px"></i></span>
+            <span style="font-size:12px;color:var(--text-secondary)">أسعار أقل بـ30–40% من الوكالات الكبرى</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAM Chart -->
+    <div class="card" style="margin-bottom:1.2rem">
+      <div style="font-size:13px;font-weight:500;margin-bottom:4px;color:var(--text-primary)"><i class="ti ti-chart-area" aria-hidden="true"></i> السوق المستهدف الفعلي (SAM) — بالمليار ريال</div>
+      <p style="font-size:11px;color:var(--text-secondary);margin-bottom:10px">نستهدف SMEs تحديداً — لا Enterprise — في مناطق الرياض وجدة والشرقية</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px;font-size:11px;color:var(--text-secondary)">
+        <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#378ADD"></span>تطوير مواقع وتطبيقات: 4.5B</span>
+        <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#1D9E75"></span>إنتاج إعلامي ومحتوى: 3.2B</span>
+        <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#BA7517"></span>إعلانات رقمية مُدارة: 7.3B</span>
+      </div>
+      <div style="position:relative;height:220px"><canvas id="marketChart" role="img" aria-label="مخطط السوق المستهدف: تطوير 4.5B، إعلامي 3.2B، إعلانات 7.3B">بيانات SAM</canvas></div>
+    </div>
+
+    <!-- حصتنا + محركات النمو -->
+    <div class="g2">
+      <div class="card hci">
+        <div class="ct"><i class="ti ti-flag" aria-hidden="true"></i>حصتنا المستهدفة — كيف نصل للأرقام؟</div>
+        <div class="cb" style="margin-top:6px">
+          <table class="tbl" style="margin-bottom:12px">
+            <thead>
+              <tr>
+                <th>السنة</th>
+                <th style="text-align:center">العملاء</th>
+                <th style="text-align:center">متوسط العقد</th>
+                <th style="text-align:left">الإيراد</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>السنة 1</td><td style="text-align:center">20</td><td style="text-align:center">75K ريال</td><td style="text-align:left;color:#639922;font-weight:500">1.5M</td></tr>
+              <tr><td>السنة 2</td><td style="text-align:center">50</td><td style="text-align:center">80K ريال</td><td style="text-align:left;color:#639922;font-weight:500">4M</td></tr>
+              <tr><td>السنة 3</td><td style="text-align:center">100</td><td style="text-align:center">85K ريال</td><td style="text-align:left;color:#639922;font-weight:500">8.5M</td></tr>
+            </tbody>
+          </table>
+          <div style="margin-bottom:8px">
+            <div style="font-size:11px;color:var(--text-secondary);margin-bottom:3px">السنة 1 — 1.5M ريال</div>
+            <div style="height:5px;background:var(--border-tertiary);border-radius:3px"><div style="height:5px;background:#378ADD;border-radius:3px;width:1%"></div></div>
+          </div>
+          <div style="margin-bottom:8px">
+            <div style="font-size:11px;color:var(--text-secondary);margin-bottom:3px">السنة 2 — 4M ريال</div>
+            <div style="height:5px;background:var(--border-tertiary);border-radius:3px"><div style="height:5px;background:#1D9E75;border-radius:3px;width:3%"></div></div>
+          </div>
+          <div>
+            <div style="font-size:11px;color:var(--text-secondary);margin-bottom:3px">السنة 3 — 8.5M ريال</div>
+            <div style="height:5px;background:var(--border-tertiary);border-radius:3px"><div style="height:5px;background:#BA7517;border-radius:3px;width:6%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card hcs">
+        <div class="ct"><i class="ti ti-trending-up" aria-hidden="true"></i>محركات النمو</div>
+        <div class="cb"><ul>
+          <li>رؤية 2030 وبرامج التحول الرقمي الحكومية</li>
+          <li>انتشار الذكاء الاصطناعي والأتمتة</li>
+          <li>نمو الاستثمار في الحلول السحابية وSaaS</li>
+          <li>ارتفاع نسبة مستخدمي الإنترنت (97.9%)</li>
+          <li>نمو قطاع التجارة الإلكترونية (+30% سنوياً)</li>
+          <li>صناديق دعم الشركات الناشئة (منشآت، وادي)</li>
+          <li>زيادة ملحوظة في الوعي بالتسويق الرقمي</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 3 — المنافسون -->
+  <div class="tab-content" id="tab-compete">
+    <p class="sec-title">تحليل المنافسين</p>
+    <p class="sec-sub">ليه العميل يسيب غيرنا ويشتغل معانا؟ — فرصتنا في المنطقة الفاضية التي يفتقدها السوق</p>
+
+    <!-- التموضع السوقي -->
+    <div class="card" style="margin-bottom:1.2rem;border-right:4px solid #378ADD">
+      <div class="ct" style="font-size:13px;font-weight:500"><i class="ti ti-target" aria-hidden="true"></i>تموضعنا في السوق — نحن لسنا مجرد شركة خدمات</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:10px">
+        <div style="background:var(--color-background-danger);border-radius:var(--border-radius-md);padding:10px">
+          <p style="font-size:11px;font-weight:500;color:var(--color-text-danger);margin-bottom:6px">لسنا هذا</p>
+          <div style="font-size:12px;color:var(--text-secondary);display:flex;flex-direction:column;gap:5px">
+            <span>✗ Software House فقط</span>
+            <span>✗ Marketing Agency فقط</span>
+            <span>✗ مجرد مورد خدمة</span>
+          </div>
+        </div>
+        <div style="background:var(--color-background-success);border-radius:var(--border-radius-md);padding:10px">
+          <p style="font-size:11px;font-weight:500;color:var(--color-text-success);margin-bottom:6px">نحن هذا</p>
+          <div style="font-size:12px;color:var(--text-secondary);display:flex;flex-direction:column;gap:5px">
+            <span>✓ Digital Growth & Transformation Partner</span>
+            <span>✓ شريك نمو رقمي متكامل للـ SMEs</span>
+            <span>✓ بنساعد الشركات تنمو من مكان واحد</span>
+          </div>
+        </div>
+        <div style="background:var(--bg-secondary);border-radius:var(--border-radius-md);padding:10px;border:1px solid var(--border-tertiary)">
+          <p style="font-size:11px;font-weight:500;color:var(--text-primary);margin-bottom:6px">ما نبيعه فعلاً</p>
+          <div style="font-size:12px;color:var(--text-secondary);display:flex;flex-direction:column;gap:5px">
+            <span>💡 راحة + نمو + إدارة</span>
+            <span>💡 مبيعات تزيد وشكل احترافي</span>
+            <span>💡 توفير وقت وجهد العميل</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- الفجوة التنافسية -->
+    <div class="card" style="margin-bottom:1.2rem;background:var(--bg-secondary);border:1px solid var(--border-tertiary)">
+      <div class="ct" style="font-size:13px;font-weight:500"><i class="ti ti-arrows-split" aria-hidden="true"></i>الفجوة التنافسية — المنطقة التي ندخلها ونكسب فيها</div>
+      <div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:12px;justify-content:center">
+        <div style="text-align:center;padding:12px 16px;background:var(--color-background-danger);border-radius:var(--border-radius-lg);flex:1;min-width:130px">
+          <div style="font-size:13px;font-weight:500;color:var(--color-text-danger);margin-bottom:4px">شركات كبيرة</div>
+          <div style="font-size:11px;color:var(--text-secondary)">جودة عالية</div>
+          <div style="font-size:11px;color:var(--text-secondary)">❌ أسعار مرتفعة جداً</div>
+          <div style="font-size:11px;color:var(--text-secondary)">❌ لا يهتمون بالـ SMEs</div>
+        </div>
+        <div style="font-size:22px;color:var(--border-secondary)">←</div>
+        <div style="text-align:center;padding:14px 18px;background:var(--color-background-success);border-radius:var(--border-radius-lg);border:2px solid #639922;flex:1;min-width:140px">
+          <div style="font-size:13px;font-weight:700;color:var(--color-text-success);margin-bottom:4px">✦ نحن هنا</div>
+          <div style="font-size:11px;color:var(--text-secondary)">جودة احترافية</div>
+          <div style="font-size:11px;color:var(--text-secondary)">✅ سعر مناسب للـ SMEs</div>
+          <div style="font-size:11px;color:var(--text-secondary)">✅ خدمة متكاملة ومنظمة</div>
+        </div>
+        <div style="font-size:22px;color:var(--border-secondary)">←</div>
+        <div style="text-align:center;padding:12px 16px;background:var(--color-background-warning);border-radius:var(--border-radius-lg);flex:1;min-width:130px">
+          <div style="font-size:13px;font-weight:500;color:var(--color-text-warning);margin-bottom:4px">فريلانسرز</div>
+          <div style="font-size:11px;color:var(--text-secondary)">أسعار منخفضة</div>
+          <div style="font-size:11px;color:var(--text-secondary)">❌ غير موثوق</div>
+          <div style="font-size:11px;color:var(--text-secondary)">❌ لا استمرارية</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- مقارنة المنافسين المفصلة -->
+    <div class="card" style="margin-bottom:1.2rem;overflow-x:auto">
+      <div class="ct" style="font-size:13px;font-weight:500;margin-bottom:8px"><i class="ti ti-table" aria-hidden="true"></i>مقارنة تفصيلية بالمنافسين</div>
+      <table class="tbl" style="min-width:560px">
+        <thead>
+          <tr>
+            <th>المنافس</th>
+            <th>تطوير</th>
+            <th>ميديا</th>
+            <th>إدارة</th>
+            <th>AI</th>
+            <th>السعر</th>
+            <th>سرعة التنفيذ</th>
+            <th>دعم مستمر</th>
+            <th>نقطة ضعفهم</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:var(--color-background-success)">
+            <td><strong>نحن</strong> <span class="bdg bs">✓</span></td>
+            <td style="color:#639922"><i class="ti ti-check"></i> كامل</td>
+            <td style="color:#639922"><i class="ti ti-check"></i> كامل</td>
+            <td style="color:#639922"><i class="ti ti-check"></i> نعم</td>
+            <td style="color:#639922"><i class="ti ti-check"></i> نعم</td>
+            <td>متوسط</td>
+            <td style="color:#639922">عالية</td>
+            <td style="color:#639922">نعم</td>
+            <td style="color:var(--text-secondary)">جديد في السوق</td>
+          </tr>
+          <tr>
+            <td>شركات تطوير محلية</td>
+            <td style="color:#639922"><i class="ti ti-check"></i> جيد</td>
+            <td style="color:#A32D2D"><i class="ti ti-x"></i> لا</td>
+            <td style="color:#A32D2D"><i class="ti ti-x"></i> لا</td>
+            <td style="color:#A32D2D"><i class="ti ti-x"></i> نادر</td>
+            <td>متوسط</td>
+            <td style="color:#BA7517">متوسطة</td>
+            <td style="color:#BA7517">محدود</td>
+            <td style="color:var(--text-secondary)">لا ميديا ولا تسويق</td>
+          </tr>
+          <tr>
+            <td>وكالات إعلانية</td>
+            <td style="color:#A32D2D"><i class="ti ti-x"></i> لا</td>
+            <td style="color:#639922"><i class="ti ti-check"></i> جيد</td>
+            <td style="color:#A32D2D"><i class="ti ti-x"></i> لا</td>
+            <td style="color:#BA7517"><i class="ti ti-minus"></i> أحياناً</td>
+            <td>مرتفع</td>
+            <td style="color:#BA7517">متوسطة</td>
+            <td style="color:#BA7517">محدود</td>
+            <td style="color:var(--text-secondary)">لا تطوير تقني</td>
+          </tr>
+          <tr>
+            <td>مستقلون (Freelancers)</td>
+            <td style="color:#BA7517"><i class="ti ti-minus"></i> متفاوت</td>
+            <td style="color:#BA7517"><i class="ti ti-minus"></i> متفاوت</td>
+            <td style="color:#A32D2D"><i class="ti ti-x"></i> لا</td>
+            <td style="color:#A32D2D"><i class="ti ti-x"></i> نادر</td>
+            <td>منخفض</td>
+            <td style="color:#A32D2D">غير منتظمة</td>
+            <td style="color:#A32D2D">لا</td>
+            <td style="color:var(--text-secondary)">غير موثوق ولا مستمر</td>
+          </tr>
+          <tr>
+            <td>شركات كبرى (Big 4)</td>
+            <td style="color:#639922"><i class="ti ti-check"></i> كامل</td>
+            <td style="color:#639922"><i class="ti ti-check"></i> كامل</td>
+            <td style="color:#639922"><i class="ti ti-check"></i> نعم</td>
+            <td style="color:#639922"><i class="ti ti-check"></i> نعم</td>
+            <td>مرتفع جداً</td>
+            <td style="color:#BA7517">بطيئة</td>
+            <td style="color:#639922">نعم</td>
+            <td style="color:var(--text-secondary)">لا يهتمون بالـ SMEs</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ميزة AI + استراتيجية No-Code + لماذا الآن -->
+    <div class="g3" style="margin-bottom:1.2rem">
+      <div class="card hcs">
+        <div class="ct"><i class="ti ti-robot" aria-hidden="true"></i>ميزة الذكاء الاصطناعي</div>
+        <div class="cb"><ul>
+          <li>أتمتة خدمة العملاء بـ AI Agents</li>
+          <li>تحليل بيانات الحملات وتحسينها تلقائياً</li>
+          <li>توليد محتوى ذكي وسريع</li>
+          <li>Dashboards تفاعلية لمتابعة الأداء</li>
+          <li>تقليل تكلفة التشغيل بنسبة تصل لـ30%</li>
+        </ul></div>
+      </div>
+      <div class="card hcw">
+        <div class="ct"><i class="ti ti-code-off" aria-hidden="true"></i>استراتيجيتنا مع No-Code</div>
+        <div class="cb">
+          <p style="font-size:11px;margin-bottom:7px;color:var(--text-secondary)">No-Code يقتل المشاريع البسيطة فقط — الشركات تظل تحتاج:</p>
+          <ul>
+            <li>حلول مخصصة ومعقدة</li>
+            <li>تكامل بين الأنظمة المختلفة</li>
+            <li>إدارة وتشغيل احترافي</li>
+            <li>استراتيجية نمو رقمية متكاملة</li>
+            <li>Branding وهوية بصرية قوية</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card hci">
+        <div class="ct"><i class="ti ti-clock-bolt" aria-hidden="true"></i>لماذا الآن؟ (Why Now?)</div>
+        <div class="cb"><ul>
+          <li>تسارع التحول الرقمي برؤية 2030</li>
+          <li>انتشار AI رفع توقعات العملاء</li>
+          <li>نمو التجارة الإلكترونية +30% سنوياً</li>
+          <li>SMEs باتت تنفق أكثر على التقنية</li>
+          <li>ارتفاع المنافسة الرقمية بين الشركات</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <!-- حواجز الدخول + SWOT -->
+    <div class="g2" style="margin-bottom:1.2rem">
+      <div class="card">
+        <div class="ct" style="font-size:13px;font-weight:500"><i class="ti ti-chart-dots" aria-hidden="true"></i>SWOT Analysis</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px">
+          <div style="background:var(--color-background-success);border-radius:var(--border-radius-md);padding:8px">
+            <p style="font-size:10px;font-weight:600;color:var(--color-text-success);margin-bottom:4px">S — القوة</p>
+            <ul style="font-size:11px;color:var(--text-secondary);padding-right:12px">
+              <li>تكامل فريد في السوق</li>
+              <li>AI Integration</li>
+              <li>سعر مناسب للـ SMEs</li>
+            </ul>
+          </div>
+          <div style="background:var(--color-background-warning);border-radius:var(--border-radius-md);padding:8px">
+            <p style="font-size:10px;font-weight:600;color:var(--color-text-warning);margin-bottom:4px">W — الضعف</p>
+            <ul style="font-size:11px;color:var(--text-secondary);padding-right:12px">
+              <li>شركة جديدة في السوق</li>
+              <li>Portfolio محدود مبدئياً</li>
+              <li>فريق صغير في البداية</li>
+            </ul>
+          </div>
+          <div style="background:var(--color-background-info);border-radius:var(--border-radius-md);padding:8px">
+            <p style="font-size:10px;font-weight:600;color:var(--color-text-info);margin-bottom:4px">O — الفرص</p>
+            <ul style="font-size:11px;color:var(--text-secondary);padding-right:12px">
+              <li>نمو السوق السعودي</li>
+              <li>رؤية 2030</li>
+              <li>1.3M شركة SME</li>
+            </ul>
+          </div>
+          <div style="background:var(--color-background-danger);border-radius:var(--border-radius-md);padding:8px">
+            <p style="font-size:10px;font-weight:600;color:var(--color-text-danger);margin-bottom:4px">T — التهديدات</p>
+            <ul style="font-size:11px;color:var(--text-secondary);padding-right:12px">
+              <li>منافسين جدد بنفس الفكرة</li>
+              <li>No-Code يأكل جزء السوق</li>
+              <li>شركات كبيرة تنزل للـ SMEs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- التركيز القطاعي -->
+    <div class="card hcs">
+      <div class="ct" style="font-size:13px;font-weight:500"><i class="ti ti-focus-2" aria-hidden="true"></i>التركيز القطاعي في البداية — قطاعات قابلة للتكرار والتوسع</div>
+      <p style="font-size:11px;color:var(--text-secondary);margin-bottom:10px">كل قطاع له احتياجات متكررة وسيستمز قابلة للـ Templating تقلل تكلفة التسليم</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px">
+        <div style="background:var(--bg-secondary);border-radius:var(--border-radius-md);padding:9px;border:1px solid var(--border-tertiary)">
+          <p style="font-size:12px;font-weight:500;color:var(--text-primary);margin-bottom:4px">🍽️ مطاعم وكافيهات</p>
+          <p style="font-size:11px;color:var(--text-secondary)">موقع + تصوير + سوشيال + إعلانات — دورة متكاملة متكررة</p>
+        </div>
+        <div style="background:var(--bg-secondary);border-radius:var(--border-radius-md);padding:9px;border:1px solid var(--border-tertiary)">
+          <p style="font-size:12px;font-weight:500;color:var(--text-primary);margin-bottom:4px">🏥 عيادات وصحة</p>
+          <p style="font-size:11px;color:var(--text-secondary)">حجز أونلاين + هوية + محتوى طبي — طلب متزايد</p>
+        </div>
+        <div style="background:var(--bg-secondary);border-radius:var(--border-radius-md);padding:9px;border:1px solid var(--border-tertiary)">
+          <p style="font-size:12px;font-weight:500;color:var(--text-primary);margin-bottom:4px">🏢 عقارات</p>
+          <p style="font-size:11px;color:var(--text-secondary)">منصة عرض + تصوير احترافي + إعلانات موجهة</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4 — الإيرادات -->
+  <div class="tab-content" id="tab-revenue">
+    <p class="sec-title">نموذج الإيرادات</p>
+    <p class="sec-sub">نحن لا نبني Agency عادية — نبني Ecosystem يحوّل كل عميل لعلاقة طويلة الأمد</p>
+
+    <!-- Revenue Mix -->
+    <div class="card" style="margin-bottom:1.2rem">
+      <div class="ct" style="font-size:13px;font-weight:500"><i class="ti ti-chart-pie" aria-hidden="true"></i>توزيع الإيرادات المستهدف (Revenue Mix) — الهدف: أغلبها Recurring</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-top:10px">
+        <div style="background:var(--color-background-info);border-radius:var(--border-radius-md);padding:10px;text-align:center">
+          <div style="font-size:22px;font-weight:600;color:var(--color-text-info)">40%</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-top:3px">Full Service</div>
+          <div style="font-size:10px;color:var(--color-text-info);margin-top:2px">Recurring ✓</div>
+        </div>
+        <div style="background:var(--color-background-success);border-radius:var(--border-radius-md);padding:10px;text-align:center">
+          <div style="font-size:22px;font-weight:600;color:var(--color-text-success)">30%</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-top:3px">تطوير مشاريع</div>
+          <div style="font-size:10px;color:var(--color-text-success);margin-top:2px">بوابة Upsell</div>
+        </div>
+        <div style="background:var(--color-background-warning);border-radius:var(--border-radius-md);padding:10px;text-align:center">
+          <div style="font-size:22px;font-weight:600;color:var(--color-text-warning)">20%</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-top:3px">باقة الميديا</div>
+          <div style="font-size:10px;color:var(--color-text-warning);margin-top:2px">Recurring ✓</div>
+        </div>
+        <div style="background:var(--bg-secondary);border-radius:var(--border-radius-md);padding:10px;text-align:center;border:1px solid var(--border-tertiary)">
+          <div style="font-size:22px;font-weight:600;color:var(--text-primary)">10%</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-top:3px">صيانة ودعم</div>
+          <div style="font-size:10px;color:var(--text-secondary);margin-top:2px">Recurring ✓</div>
+        </div>
+      </div>
+      <div style="margin-top:10px;padding:8px 12px;background:var(--color-background-success);border-radius:var(--border-radius-md);font-size:12px;color:var(--color-text-success)">
+        ✓ <strong>70% من الإيرادات المستهدفة Recurring</strong> — أكثر استقرار، أسهل توقعاً، ترفع قيمة الشركة
+      </div>
+    </div>
+
+    <!-- مصادر الإيرادات الأربعة -->
+    <div class="g2" style="margin-bottom:1.2rem">
+      <div class="card hci">
+        <div class="ct"><i class="ti ti-stars" aria-hidden="true"></i>الباقة الكاملة (Full Service)</div>
+        <div style="margin:6px 0"><span class="bdg bi">Recurring — اشتراك شهري</span> <span class="bdg bs" style="margin-right:5px">الأعلى قيمة</span></div>
+        <div style="font-size:20px;font-weight:500;margin:8px 0;color:var(--text-primary)">15,000 – 80,000 ريال/شهر</div>
+        <p style="font-size:11px;color:var(--text-secondary);margin-bottom:8px">إدارة + تطوير + ميديا + إعلانات كاملة تحت سقف واحد</p>
+        <div style="background:var(--bg-secondary);border-radius:var(--border-radius-md);padding:7px">
+          <p style="font-size:10px;font-weight:500;color:var(--text-secondary);margin-bottom:4px">متوسط عمر العميل</p>
+          <p style="font-size:12px;color:var(--text-primary)">12 – 24 شهر ← LTV تصل لـ <strong style="color:#639922">960K – 1.9M ريال</strong></p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ct"><i class="ti ti-device-desktop" aria-hidden="true"></i>تطوير موقع أو تطبيق</div>
+        <div style="margin:6px 0"><span class="bdg bw">Project Revenue — مشروع بسعر ثابت</span></div>
+        <div style="font-size:20px;font-weight:500;margin:8px 0;color:var(--text-primary)">15,000 – 120,000 ريال</div>
+        <p style="font-size:11px;color:var(--text-secondary);margin-bottom:8px">بوابة الدخول الأقوى — المشروع ليس النهاية بل بداية العلاقة</p>
+        <div style="background:var(--bg-secondary);border-radius:var(--border-radius-md);padding:7px">
+          <p style="font-size:10px;font-weight:500;color:var(--text-secondary);margin-bottom:4px">متوسط عمر العميل</p>
+          <p style="font-size:12px;color:var(--text-primary)">2 – 3 شهور ← يتحول لـ Full Service بعد Upsell</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ct"><i class="ti ti-camera" aria-hidden="true"></i>باقة الميديا والمحتوى</div>
+        <div style="margin:6px 0"><span class="bdg bi">Recurring — اشتراك شهري</span></div>
+        <div style="font-size:20px;font-weight:500;margin:8px 0;color:var(--text-primary)">5,000 – 18,000 ريال/شهر</div>
+        <p style="font-size:11px;color:var(--text-secondary);margin-bottom:8px">تصوير + مونتاج + تصميم + إدارة سوشيال — مطلوبة دائماً وتشغّل الفريق باستمرار</p>
+        <div style="background:var(--bg-secondary);border-radius:var(--border-radius-md);padding:7px">
+          <p style="font-size:10px;font-weight:500;color:var(--text-secondary);margin-bottom:4px">متوسط عمر العميل</p>
+          <p style="font-size:12px;color:var(--text-primary)">6 – 12 شهر ← Stable Income منخفض التكلفة</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ct"><i class="ti ti-settings" aria-hidden="true"></i>صيانة ودعم تقني</div>
+        <div style="margin:6px 0"><span class="bdg bw">Recurring — اشتراك شهري</span></div>
+        <div style="font-size:20px;font-weight:500;margin:8px 0;color:var(--text-primary)">2,000 – 8,000 ريال/شهر</div>
+        <p style="font-size:11px;color:var(--text-secondary);margin-bottom:8px">تحديثات + حماية + استضافة + Support — تكلفة تشغيل قليلة جداً</p>
+        <div style="background:var(--bg-secondary);border-radius:var(--border-radius-md);padding:7px">
+          <p style="font-size:10px;font-weight:500;color:var(--text-secondary);margin-bottom:4px">الفائدة الحقيقية</p>
+          <p style="font-size:12px;color:var(--text-primary)">يُبقي العميل متصلاً بنا ← فرصة Upsell مستمرة</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Land and Expand -->
+    <div class="card" style="margin-bottom:1.2rem;border-right:4px solid #378ADD">
+      <div class="ct" style="font-size:13px;font-weight:500"><i class="ti ti-arrow-curve-right" aria-hidden="true"></i>استراتيجية Land & Expand — كيف يتحول كل عميل لعلاقة طويلة الأمد</div>
+      <p style="font-size:11px;color:var(--text-secondary);margin:6px 0 12px">ندخل بخدمة صغيرة ← نقدم قيمة حقيقية ← نكبّر العلاقة تدريجياً</p>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin-bottom:12px">
+        <div style="background:var(--color-background-info);border-radius:var(--border-radius-md);padding:7px 10px;text-align:center;min-width:80px">
+          <div style="font-size:10px;color:var(--color-text-info);font-weight:500">الدخول</div>
+          <div style="font-size:11px;color:var(--text-primary);margin-top:2px">موقع / ميديا</div>
+          <div style="font-size:10px;color:var(--text-secondary)">20K</div>
+        </div>
+        <div style="color:var(--border-secondary);font-size:16px">→</div>
+        <div style="background:var(--bg-secondary);border-radius:var(--border-radius-md);padding:7px 10px;text-align:center;min-width:80px;border:1px solid var(--border-tertiary)">
+          <div style="font-size:10px;color:var(--text-secondary);font-weight:500">Upsell</div>
+          <div style="font-size:11px;color:var(--text-primary);margin-top:2px">+ إعلانات</div>
+          <div style="font-size:10px;color:var(--text-secondary)">+15K/شهر</div>
+        </div>
+        <div style="color:var(--border-secondary);font-size:16px">→</div>
+        <div style="background:var(--bg-secondary);border-radius:var(--border-radius-md);padding:7px 10px;text-align:center;min-width:80px;border:1px solid var(--border-tertiary)">
+          <div style="font-size:10px;color:var(--text-secondary);font-weight:500">Cross-Sell</div>
+          <div style="font-size:11px;color:var(--text-primary);margin-top:2px">+ AI Automation</div>
+          <div style="font-size:10px;color:var(--text-secondary)">+10K/شهر</div>
+        </div>
+        <div style="color:var(--border-secondary);font-size:16px">→</div>
+        <div style="background:var(--color-background-success);border-radius:var(--border-radius-md);padding:7px 10px;text-align:center;min-width:80px">
+          <div style="font-size:10px;color:var(--color-text-success);font-weight:500">Full Service</div>
+          <div style="font-size:11px;color:var(--text-primary);margin-top:2px">عميل متكامل</div>
+          <div style="font-size:10px;color:#639922;font-weight:500">50K/شهر ✓</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:7px">
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:9px;background:var(--bg-secondary);border-radius:var(--border-radius-md)">
+          <span style="background:var(--color-background-info);color:var(--color-text-info);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0">1</span>
+          <span style="font-size:12px;color:var(--text-secondary)">عميل يطلب موقع فقط ← نسلّم بجودة عالية ← نقترح إعلانات وميديا ← يتحول لعميل شهري 50K</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:9px;background:var(--bg-secondary);border-radius:var(--border-radius-md)">
+          <span style="background:var(--color-background-success);color:var(--color-text-success);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0">2</span>
+          <span style="font-size:12px;color:var(--text-secondary)">عميل لديه فكرة وتمويل ← نوفر الإدارة الكاملة + التطوير + الميديا ← عقد Full Service طويل الأمد</span>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:10px;padding:9px;background:var(--bg-secondary);border-radius:var(--border-radius-md)">
+          <span style="background:var(--color-background-warning);color:var(--color-text-warning);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0">3</span>
+          <span style="font-size:12px;color:var(--text-secondary)">عميل يريد ميديا فقط ← نضيف AI Automation + Support ← يصبح عميل متكامل بدون أن يشعر بالتغيير</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAC vs LTV + Retention + Acquisition -->
+    <div class="g2" style="margin-bottom:1.2rem">
+      <div class="card hcs">
+        <div class="ct"><i class="ti ti-scale" aria-hidden="true"></i>CAC مقابل LTV — لماذا كل عميل مربح جداً؟</div>
+        <div class="cb" style="margin-top:6px">
+          <table class="tbl" style="margin-bottom:10px">
+            <thead><tr><th>نوع العميل</th><th style="text-align:left">CAC</th><th style="text-align:left">LTV</th><th style="text-align:left">النسبة</th></tr></thead>
+            <tbody>
+              <tr><td>Full Service</td><td style="text-align:left;color:#A32D2D">15K</td><td style="text-align:left;color:#639922">960K+</td><td style="text-align:left;font-weight:500;color:#639922">64:1</td></tr>
+              <tr><td>تطوير + Upsell</td><td style="text-align:left;color:#A32D2D">8K</td><td style="text-align:left;color:#639922">120K+</td><td style="text-align:left;font-weight:500;color:#639922">15:1</td></tr>
+              <tr><td>ميديا شهرية</td><td style="text-align:left;color:#A32D2D">5K</td><td style="text-align:left;color:#639922">72K+</td><td style="text-align:left;font-weight:500;color:#639922">14:1</td></tr>
+            </tbody>
+          </table>
+          <div style="background:var(--color-background-success);border-radius:var(--border-radius-md);padding:8px;font-size:11px;color:var(--color-text-success)">
+            ✓ نسبة LTV:CAC المستهدفة 5:1 – 8:1 — نحقق أكثر من ذلك
+          </div>
+        </div>
+      </div>
+      <div class="card hci">
+        <div class="ct"><i class="ti ti-users-group" aria-hidden="true"></i>استراتيجية اكتساب العملاء</div>
+        <div class="cb"><ul>
+          <li>LinkedIn Outreach المستهدف للـ SMEs</li>
+          <li>Referrals وعمولات للشركاء</li>
+          <li>Content Marketing وSEO</li>
+          <li>Networking وفعاليات ريادة الأعمال</li>
+          <li>Cold Emailing للقطاعات المستهدفة</li>
+          <li>Partnerships مع محاسبين ومستشارين</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <!-- Retention + Expansion -->
+    <div class="g2" style="margin-bottom:1.2rem">
+      <div class="card">
+        <div class="ct"><i class="ti ti-heart" aria-hidden="true"></i>استراتيجية الاحتفاظ بالعميل (Retention)</div>
+        <div class="cb"><ul>
+          <li>مدير حساب مخصص لكل عميل</li>
+          <li>تقارير شهرية شفافة لقياس الأداء</li>
+          <li>Dashboard للعميل لمتابعة نتائجه</li>
+          <li>دعم سريع بعد التسليم بلا تأخير</li>
+          <li>خصومات وعروض للعملاء الدائمين</li>
+          <li>تحسين مستمر بدون طلب إضافي</li>
+        </ul></div>
+      </div>
+      <div class="card">
+        <div class="ct"><i class="ti ti-rocket" aria-hidden="true"></i>استراتيجية التوسع المستقبلي (Expansion)</div>
+        <div class="cb">
+          <p style="font-size:11px;color:var(--text-secondary);margin-bottom:7px">مصادر إيراد مستقبلية تكبّر الشركة بدون تكلفة إضافية كبيرة:</p>
+          <ul>
+            <li>AI Services وAutomation Systems</li>
+            <li>SaaS Products مبنية على تجربتنا</li>
+            <li>White Label للشركاء</li>
+            <li>Templates وDigital Products</li>
+            <li>التوسع لأسواق الخليج المجاورة</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Revenue Predictability -->
+    <div class="card" style="background:var(--bg-secondary);border:1px solid var(--border-tertiary)">
+      <div class="ct" style="font-size:13px;font-weight:500"><i class="ti ti-trending-up" aria-hidden="true"></i>استقرار الإيرادات (Revenue Predictability) — الهدف بنهاية السنة 2</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:10px">
+        <div class="mcard">
+          <div style="font-size:20px;font-weight:500;color:#378ADD">60%</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-top:3px">اشتراكات شهرية ثابتة</div>
+          <div style="font-size:10px;color:var(--text-secondary)">متوقعة ومضمونة</div>
+        </div>
+        <div class="mcard">
+          <div style="font-size:20px;font-weight:500;color:#639922">80%</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-top:3px">معدل الاحتفاظ بالعملاء</div>
+          <div style="font-size:10px;color:var(--text-secondary)">هدف سنة 2+</div>
+        </div>
+        <div class="mcard">
+          <div style="font-size:20px;font-weight:500;color:#BA7517">70%</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-top:3px">عملاء تحوّلوا لـ Upsell</div>
+          <div style="font-size:10px;color:var(--text-secondary)">بعد أول خدمة</div>
+        </div>
+        <div class="mcard">
+          <div style="font-size:20px;font-weight:500;color:#639922">5:1</div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-top:3px">نسبة LTV:CAC المستهدفة</div>
+          <div style="font-size:10px;color:var(--text-secondary)">نحقق 14:1 فعلياً</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 5 — اقتصاديات العميل -->
+  <div class="tab-content" id="tab-unit">
+    <p class="sec-title">اقتصاديات العميل — ربح وخسارة كل نوع</p>
+    <p class="sec-sub">تحليل مالي مفصل لكل نوع عميل على حدة بالأرقام الواقعية</p>
+    <div class="g3" style="margin-bottom:1.2rem">
+      <div class="card" style="border-top:2px solid #378ADD">
+        <div style="font-size:12px;font-weight:500;margin-bottom:9px;color:var(--text-primary)">الباقة الكاملة (Enterprise)</div>
+        <table class="tbl">
+          <tr><td style="color:var(--text-secondary)">الإيراد الشهري</td><td style="text-align:left;color:#639922;font-weight:500">+ 50,000 ريال</td></tr>
+          <tr><td style="color:var(--text-secondary)">رواتب الفريق</td><td style="text-align:left;color:#A32D2D">- 18,000</td></tr>
+          <tr><td style="color:var(--text-secondary)">أدوات وتشغيل</td><td style="text-align:left;color:#A32D2D">- 4,000</td></tr>
+          <tr><td style="color:var(--text-secondary)">إدارة وتسويق</td><td style="text-align:left;color:#A32D2D">- 5,500</td></tr>
+          <tr><td style="color:var(--text-secondary)">بنية تحتية</td><td style="text-align:left;color:#A32D2D">- 2,500</td></tr>
+          <tr style="border-top:0.5px solid var(--border-tertiary)"><td style="font-weight:500;color:var(--text-primary)">صافي الربح</td><td style="text-align:left;font-weight:500;color:#639922">20,000 ريال</td></tr>
+        </table>
+        <div style="margin-top:8px;background:var(--bg-secondary);border-radius:var(--border-radius-md);padding:7px;text-align:center"><span style="font-size:19px;font-weight:500;color:#639922">40%</span><span style="font-size:11px;color:var(--text-secondary);display:block">هامش الربح</span></div>
+      </div>
+      <div class="card" style="border-top:2px solid #1D9E75">
+        <div style="font-size:12px;font-weight:500;margin-bottom:9px;color:var(--text-primary)">مشروع ويب/موبايل</div>
+        <table class="tbl">
+          <tr><td style="color:var(--text-secondary)">إيراد المشروع</td><td style="text-align:left;color:#639922;font-weight:500">+ 30,000 ريال</td></tr>
+          <tr><td style="color:var(--text-secondary)">رواتب المطورين</td><td style="text-align:left;color:#A32D2D">- 8,000</td></tr>
+          <tr><td style="color:var(--text-secondary)">أدوات وبنية تحتية</td><td style="text-align:left;color:#A32D2D">- 2,000</td></tr>
+          <tr><td style="color:var(--text-secondary)">إدارة المشروع</td><td style="text-align:left;color:#A32D2D">- 2,500</td></tr>
+          <tr><td style="color:var(--text-secondary)">مبيعات وتسويق</td><td style="text-align:left;color:#A32D2D">- 1,500</td></tr>
+          <tr style="border-top:0.5px solid var(--border-tertiary)"><td style="font-weight:500;color:var(--text-primary)">صافي الربح</td><td style="text-align:left;font-weight:500;color:#639922">16,000 ريال</td></tr>
+        </table>
+        <div style="margin-top:8px;background:var(--bg-secondary);border-radius:var(--border-radius-md);padding:7px;text-align:center"><span style="font-size:19px;font-weight:500;color:#639922">53%</span><span style="font-size:11px;color:var(--text-secondary);display:block">هامش الربح</span></div>
+      </div>
+      <div class="card" style="border-top:2px solid #BA7517">
+        <div style="font-size:12px;font-weight:500;margin-bottom:9px;color:var(--text-primary)">باقة الميديا الشهرية</div>
+        <table class="tbl">
+          <tr><td style="color:var(--text-secondary)">الإيراد الشهري</td><td style="text-align:left;color:#639922;font-weight:500">+ 10,000 ريال</td></tr>
+          <tr><td style="color:var(--text-secondary)">فريق التصوير والمونتاج</td><td style="text-align:left;color:#A32D2D">- 3,200</td></tr>
+          <tr><td style="color:var(--text-secondary)">معدات وأدوات</td><td style="text-align:left;color:#A32D2D">- 800</td></tr>
+          <tr><td style="color:var(--text-secondary)">إدارة محتوى</td><td style="text-align:left;color:#A32D2D">- 1,200</td></tr>
+          <tr><td style="color:var(--text-secondary)">تسويق ومبيعات</td><td style="text-align:left;color:#A32D2D">- 500</td></tr>
+          <tr style="border-top:0.5px solid var(--border-tertiary)"><td style="font-weight:500;color:var(--text-primary)">صافي الربح</td><td style="text-align:left;font-weight:500;color:#639922">4,300 ريال</td></tr>
+        </table>
+        <div style="margin-top:8px;background:var(--bg-secondary);border-radius:var(--border-radius-md);padding:7px;text-align:center"><span style="font-size:19px;font-weight:500;color:#639922">43%</span><span style="font-size:11px;color:var(--text-secondary);display:block">هامش الربح</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="ct" style="font-size:13px;font-weight:500"><i class="ti ti-info-circle" aria-hidden="true"></i>مؤشرات اقتصادية مهمة</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-top:10px">
+        <div class="mcard"><div style="font-size:16px;font-weight:500;color:var(--text-primary)">3-6 أشهر</div><div style="font-size:11px;color:var(--text-secondary);margin-top:2px">تكلفة اكتساب عميل (CAC)</div></div>
+        <div class="mcard"><div style="font-size:16px;font-weight:500;color:var(--text-primary)">18-24 شهر</div><div style="font-size:11px;color:var(--text-secondary);margin-top:2px">متوسط عمر العميل (LTV)</div></div>
+        <div class="mcard"><div style="font-size:16px;font-weight:500;color:var(--text-primary)">5:1 – 8:1</div><div style="font-size:11px;color:var(--text-secondary);margin-top:2px">نسبة LTV:CAC المستهدفة</div></div>
+        <div class="mcard"><div style="font-size:16px;font-weight:500;color:var(--text-primary)">40-53%</div><div style="font-size:11px;color:var(--text-secondary);margin-top:2px">متوسط هامش الربح الإجمالي</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 6 — التوقعات المالية -->
+  <div class="tab-content" id="tab-fin">
+    <p class="sec-title">التوقعات المالية — 3 سنوات</p>
+    <p class="sec-sub">افتراضات بناءً على مزيج متوازن من الباقات وخطة نمو متحفظة وواقعية</p>
+    <div class="g3" style="margin-bottom:1.2rem">
+      <div class="mcard"><div style="font-size:11px;color:var(--text-secondary);margin-bottom:3px">إجمالي إيرادات السنة 1</div><div style="font-size:20px;font-weight:500;color:var(--text-primary)">1.4M ريال</div><div style="font-size:11px;color:var(--text-secondary)">8-10 عملاء نشطين</div></div>
+      <div class="mcard"><div style="font-size:11px;color:var(--text-secondary);margin-bottom:3px">إجمالي إيرادات السنة 2</div><div style="font-size:20px;font-weight:500;color:var(--text-primary)">3.8M ريال</div><div style="font-size:11px;color:var(--text-secondary)">20-25 عميل نشط</div></div>
+      <div class="mcard"><div style="font-size:11px;color:var(--text-secondary);margin-bottom:3px">إجمالي إيرادات السنة 3</div><div style="font-size:20px;font-weight:500;color:var(--text-primary)">8.5M ريال</div><div style="font-size:11px;color:var(--text-secondary)">45-55 عميل نشط</div></div>
+    </div>
+    <div class="card" style="margin-bottom:1.2rem">
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px;font-size:11px;color:var(--text-secondary)">
+        <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#378ADD"></span>الإيرادات</span>
+        <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#E24B4A"></span>إجمالي التكاليف</span>
+        <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#639922"></span>صافي الربح</span>
+      </div>
+      <div style="position:relative;height:260px"><canvas id="revenueChart" role="img" aria-label="مخطط الإيرادات والتكاليف والأرباح لثلاث سنوات">الإيرادات: السنة 1: 1.4M، السنة 2: 3.8M، السنة 3: 8.5M</canvas></div>
+    </div>
+    <div class="card" style="margin-bottom:1.2rem;overflow-x:auto">
+      <div style="font-size:13px;font-weight:500;margin-bottom:9px;color:var(--text-primary)">ملخص مالي تفصيلي (ريال سعودي)</div>
+      <table class="tbl" style="min-width:460px">
+        <thead><tr><th>البند</th><th style="text-align:left">السنة 1</th><th style="text-align:left">السنة 2</th><th style="text-align:left">السنة 3</th></tr></thead>
+        <tbody>
+          <tr><td>إجمالي الإيرادات</td><td style="text-align:left;color:#639922">1,400,000</td><td style="text-align:left;color:#639922">3,800,000</td><td style="text-align:left;color:#639922">8,500,000</td></tr>
+          <tr><td>تكاليف تشغيل (COGs)</td><td style="text-align:left;color:#A32D2D">630,000</td><td style="text-align:left;color:#A32D2D">1,710,000</td><td style="text-align:left;color:#A32D2D">3,825,000</td></tr>
+          <tr><td>الربح الإجمالي</td><td style="text-align:left">770,000</td><td style="text-align:left">2,090,000</td><td style="text-align:left">4,675,000</td></tr>
+          <tr><td>رواتب الفريق</td><td style="text-align:left;color:#A32D2D">480,000</td><td style="text-align:left;color:#A32D2D">960,000</td><td style="text-align:left;color:#A32D2D">1,800,000</td></tr>
+          <tr><td>إيجار + تشغيل</td><td style="text-align:left;color:#A32D2D">120,000</td><td style="text-align:left;color:#A32D2D">180,000</td><td style="text-align:left;color:#A32D2D">300,000</td></tr>
+          <tr><td>تسويق ومبيعات</td><td style="text-align:left;color:#A32D2D">140,000</td><td style="text-align:left;color:#A32D2D">300,000</td><td style="text-align:left;color:#A32D2D">500,000</td></tr>
+          <tr><td>أدوات وبرمجيات</td><td style="text-align:left;color:#A32D2D">60,000</td><td style="text-align:left;color:#A32D2D">110,000</td><td style="text-align:left;color:#A32D2D">200,000</td></tr>
+          <tr class="tr-total"><td>صافي الربح</td><td style="text-align:left;color:#639922">-30,000</td><td style="text-align:left;color:#639922">540,000</td><td style="text-align:left;color:#639922">1,875,000</td></tr>
+          <tr><td style="color:var(--text-secondary)">هامش الربح الصافي</td><td style="text-align:left;color:var(--text-secondary)">-2%</td><td style="text-align:left;color:#639922">14%</td><td style="text-align:left;color:#639922">22%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="g2">
+      <div class="card hci">
+        <div class="ct"><i class="ti ti-coin" aria-hidden="true"></i>الاستثمار المطلوب للبدء</div>
+        <div class="cb">
+          <table class="tbl">
+            <tr><td style="color:var(--text-secondary)">تجهيز مكتب ومعدات</td><td style="text-align:left">80,000 ريال</td></tr>
+            <tr><td style="color:var(--text-secondary)">رواتب 3 أشهر تأسيس</td><td style="text-align:left">150,000 ريال</td></tr>
+            <tr><td style="color:var(--text-secondary)">تسويق وبناء العلامة</td><td style="text-align:left">60,000 ريال</td></tr>
+            <tr><td style="color:var(--text-secondary)">أدوات ورخص وتراخيص</td><td style="text-align:left">40,000 ريال</td></tr>
+            <tr><td style="color:var(--text-secondary)">احتياطي طوارئ</td><td style="text-align:left">70,000 ريال</td></tr>
+            <tr style="border-top:0.5px solid var(--border-tertiary)"><td style="font-weight:500">إجمالي التمويل</td><td style="text-align:left;font-weight:500;color:#378ADD">400,000 ريال</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="card hcs">
+        <div class="ct"><i class="ti ti-clock" aria-hidden="true"></i>متى نصل للتعادل؟</div>
+        <div class="cb">
+          <div style="font-size:22px;font-weight:500;color:var(--text-primary);margin:7px 0">الشهر 14 – 16</div>
+          <p style="font-size:11px;color:var(--text-secondary)">نقطة التعادل (Break-even) تتحقق عند 12 عميل نشط بمتوسط 12,000 ريال/شهر/عميل</p>
+          <div style="margin-top:10px;padding:8px;background:var(--bg-secondary);border-radius:var(--border-radius-md)">
+            <span style="font-size:11px;color:var(--text-secondary)">العائد على الاستثمار (ROI) بنهاية السنة 3:</span>
+            <span style="font-size:18px;font-weight:500;color:#639922;display:block">+369%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+var initiated = {};
+
+function showTab(name, btn) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+  if (name === 'fin' && !initiated.fin) { initiated.fin = true; initFin(); }
+  if (name === 'market' && !initiated.market) { initiated.market = true; initMarket(); }
+}
+
+function initFin() {
+  new Chart(document.getElementById('revenueChart'), {
+    type: 'bar',
+    data: {
+      labels: ['السنة 1', 'السنة 2', 'السنة 3'],
+      datasets: [
+        { label: 'الإيرادات', data: [1400000, 3800000, 8500000], backgroundColor: '#378ADD', borderRadius: 4 },
+        { label: 'التكاليف', data: [1430000, 3260000, 6625000], backgroundColor: '#E24B4A', borderRadius: 4 },
+        { label: 'صافي الربح', data: [-30000, 540000, 1875000], backgroundColor: '#639922', borderRadius: 4 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { ticks: { callback: v => (v / 1000000).toFixed(1) + 'M' }, grid: { color: 'rgba(150,150,150,0.1)' } },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+}
+
+function initMarket() {
+  new Chart(document.getElementById('marketChart'), {
+    type: 'bar',
+    data: {
+      labels: ['تطوير مواقع وتطبيقات', 'إنتاج إعلامي ومحتوى', 'إعلانات رقمية مُدارة'],
+      datasets: [{ data: [4.5, 3.2, 7.3], backgroundColor: ['#378ADD', '#1D9E75', '#BA7517'], borderRadius: 4 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { ticks: { callback: v => v + 'B ريال' }, grid: { color: 'rgba(150,150,150,0.1)' } },
+        x: { ticks: { autoSkip: false }, grid: { display: false } }
+      }
+    }
+  });
+}
+
+function toggleDarkMode() {
+  const body = document.body;
+  const icon = document.getElementById('dark-mode-icon');
+  body.classList.toggle('dark-mode');
+  if (body.classList.contains('dark-mode')) {
+    icon.textContent = '☀️';
+    localStorage.setItem('darkMode', 'enabled');
+  } else {
+    icon.textContent = '🌙';
+    localStorage.setItem('darkMode', 'disabled');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+    document.getElementById('dark-mode-icon').textContent = '☀️';
+  }
+});
+</script>
+</html>
